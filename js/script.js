@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $('.customer-logos').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -20,3 +20,27 @@ $(document).ready(function(){
         }]
     });
 });
+
+function confirmDownload() {
+    Swal.fire({
+        title: 'Anda ingin mendownload aplikasi-posyandu?',
+        icon: 'question',
+        iconColor: '#3085d6',
+        showCancelButton: true,
+        confirmButtonText: 'Ya',
+        confirmButtonColor: '#3085d6',
+        cancelButtonText: 'Tidak'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            downloadAPK();
+        }
+    });
+}
+
+function downloadAPK() {
+    var apkURL = 'path/to/asset/app/aplikasi-posyandu.apk';
+    var tempLink = document.createElement('a');
+    tempLink.href = apkURL;
+    tempLink.setAttribute('download', 'aplikasi-posyandu.apk');
+    tempLink.click();
+}
