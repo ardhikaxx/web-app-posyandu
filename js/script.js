@@ -38,9 +38,27 @@ function confirmDownload() {
 }
 
 function downloadAPK() {
-    var apkURL = 'path/to/asset/app/Posyandu-Bayi-Balita.apk';
+    var apkURL = './assets/app/Posyandu-Bayi-Balita.apk';
     var tempLink = document.createElement('a');
     tempLink.href = apkURL;
-    tempLink.setAttribute('download', 'Posyandu Bayi Balita.apk');
+    tempLink.setAttribute('download', 'Posyandu-Bayi-Balita.apk');
     tempLink.click();
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    function handleMenuClick(event) {
+        event.preventDefault();
+
+        var targetId = this.getAttribute('href').substring(1);
+
+        var targetElement = document.getElementById(targetId);
+
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    var menuLinks = document.querySelectorAll('.btn-getStarted');
+
+    menuLinks.forEach(function(link) {
+        link.addEventListener('click', handleMenuClick);
+    });
+});
