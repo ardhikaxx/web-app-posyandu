@@ -38,9 +38,9 @@ function confirmDownload() {
 }
 
 function downloadAPK() {
-    var apkURL = 'path/to/asset/app/aplikasi-posyandu.apk';
+    var apkURL = 'path/to/asset/app/Posyandu Bayi Balita.apk';
     var tempLink = document.createElement('a');
     tempLink.href = apkURL;
-    tempLink.setAttribute('download', 'aplikasi-posyandu.apk');
+    tempLink.setAttribute('download', 'Posyandu Bayi Balita.apk');
     tempLink.click();
 }
