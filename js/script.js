@@ -21,19 +21,39 @@ $(document).ready(function () {
     });
 });
 
-function confirmDownload() {
+function requestPassword() {
     Swal.fire({
-        title: 'Anda ingin mendownload aplikasi-posyandu?',
-        icon: 'question',
-        iconColor: '#3085d6',
+        title: 'Masukkan Password',
+        input: 'password',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
         showCancelButton: true,
-        confirmButtonText: 'Ya',
-        confirmButtonColor: '#3085d6',
-        cancelButtonText: 'Tidak'
+        confirmButtonText: 'Kirim',
+        showLoaderOnConfirm: false,
+        preConfirm: (password) => {
+            const correctPassword = 'posyandu2024';
+            if (password === correctPassword) {
+                return Promise.resolve();
+            } else {
+                return Promise.reject('Password salah, coba lagi!');
+            }
+        },
+        allowOutsideClick: false
     }).then((result) => {
         if (result.isConfirmed) {
             downloadAPK();
         }
+    }).catch((error) => {
+        Swal.fire({
+            title: 'Gagal!',
+            text: error,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#3085d6'
+        }).then(() => {
+            location.reload();
+        });
     });
 }
 
@@ -43,6 +63,42 @@ function downloadAPK() {
     tempLink.href = apkURL;
     tempLink.setAttribute('download', 'Posyandu-Bayi-Balita.apk');
     tempLink.click();
+}
+
+function confirmWebsiteAccess() {
+    Swal.fire({
+        title: 'Masukkan Password',
+        input: 'password',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Kirim',
+        showLoaderOnConfirm: false,
+        preConfirm: (password) => {
+            const correctPassword = 'posyandu2024';
+            if (password === correctPassword) {
+                return Promise.resolve();
+            } else {
+                return Promise.reject('Password salah, coba lagi!');
+            }
+        },
+        allowOutsideClick: false
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.open('https://posyandubayibalita.com/', '_blank');
+        }
+    }).catch((error) => {
+        Swal.fire({
+            title: 'Gagal!',
+            text: error,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#3085d6'
+        }).then(() => {
+            location.reload();
+        });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
