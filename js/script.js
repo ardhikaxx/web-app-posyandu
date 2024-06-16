@@ -30,6 +30,7 @@ function requestPassword() {
         },
         showCancelButton: true,
         confirmButtonText: 'Kirim',
+        confirmButtonColor: '#3085d6',
         showLoaderOnConfirm: false,
         preConfirm: (password) => {
             const correctPassword = 'posyandu2024';
@@ -74,6 +75,7 @@ function confirmWebsiteAccess() {
         },
         showCancelButton: true,
         confirmButtonText: 'Kirim',
+        confirmButtonColor: '#3085d6',
         showLoaderOnConfirm: false,
         preConfirm: (password) => {
             const correctPassword = 'posyandu2024';
