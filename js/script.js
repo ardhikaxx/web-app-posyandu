@@ -52,8 +52,6 @@ function requestPassword() {
             icon: 'error',
             confirmButtonText: 'OK',
             confirmButtonColor: '#3085d6'
-        }).then(() => {
-            location.reload();
         });
     });
 }
@@ -97,8 +95,6 @@ function confirmWebsiteAccess() {
             icon: 'error',
             confirmButtonText: 'OK',
             confirmButtonColor: '#3085d6'
-        }).then(() => {
-            location.reload();
         });
     });
 }
