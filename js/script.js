@@ -64,40 +64,40 @@ function downloadAPK() {
     tempLink.click();
 }
 
-function confirmWebsiteAccess() {
-    Swal.fire({
-        title: 'Masukkan Password',
-        input: 'password',
-        inputAttributes: {
-            autocapitalize: 'off'
-        },
-        showCancelButton: true,
-        confirmButtonText: 'Kirim',
-        confirmButtonColor: '#3085d6',
-        showLoaderOnConfirm: false,
-        preConfirm: (password) => {
-            const correctPassword = 'posyandu2024';
-            if (password === correctPassword) {
-                return Promise.resolve();
-            } else {
-                return Promise.reject('Password salah, coba lagi!');
-            }
-        },
-        allowOutsideClick: false
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.open('https://posyandubayibalita.com/', '_blank');
-        }
-    }).catch((error) => {
-        Swal.fire({
-            title: 'Gagal!',
-            text: error,
-            icon: 'error',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#3085d6'
-        });
-    });
-}
+// function confirmWebsiteAccess() {
+//     Swal.fire({
+//         title: 'Masukkan Password',
+//         input: 'password',
+//         inputAttributes: {
+//             autocapitalize: 'off'
+//         },
+//         showCancelButton: true,
+//         confirmButtonText: 'Kirim',
+//         confirmButtonColor: '#3085d6',
+//         showLoaderOnConfirm: false,
+//         preConfirm: (password) => {
+//             const correctPassword = 'posyandu2024';
+//             if (password === correctPassword) {
+//                 return Promise.resolve();
+//             } else {
+//                 return Promise.reject('Password salah, coba lagi!');
+//             }
+//         },
+//         allowOutsideClick: false
+//     }).then((result) => {
+//         if (result.isConfirmed) {
+//             window.open('https://posyandubayibalita.com/', '_blank');
+//         }
+//     }).catch((error) => {
+//         Swal.fire({
+//             title: 'Gagal!',
+//             text: error,
+//             icon: 'error',
+//             confirmButtonText: 'OK',
+//             confirmButtonColor: '#3085d6'
+//         });
+//     });
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
     function handleMenuClick(event) {
